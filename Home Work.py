@@ -79,9 +79,35 @@ print(chicken_1, chicken_2, sep="\n")
 
 print()
 
-goat_1 = Goat('Рога', 'Беееее-бееее', 30)
+goat_1 = Goat('Рога', 'Беееее-бееее', 30)                    #2 Kozi
 goat_2 = Goat('Копыта', 'Беееее-бееее', 27)
+goat_2.eat()
+goat_1.eat()
+goat_1.milk()
+goat_2.milk()
+print(goat_1, goat_2, sep='\n')
 
+print()
+
+duck = Duck('Кряква', 'кря-кря', 2 )
+duck.eggs()
+duck.eat()
+print(duck)
+
+list_animals = [
+    {duck,
+    goat_1,goat_2,
+    sheep_2,sheep_1,
+    goose_2,goose_1,
+    chicken_2,chicken_1,
+    cow:650}
+]
+total = 0
+for head in list_animals:
+
+
+    total += head
+print(total)
 
 
 
