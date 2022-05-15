@@ -111,16 +111,27 @@ list_animals = {
      'chicken_2': 3, 'chicken_1': 1,
      'cow': 650}
 
-temp = None
-total = 0
-count = 0
-for key,val in list_animals.items():
-    if total <= val:
-        count = val
-        total += val
-        temp = key
+total_weight = 0
+max_weight_animal = None
 
+for animal in list_animals:
+  # считаем общий вес
+  total_weight += animal.weight
 
+  # определяем самого жирного
+  if max_weight_animal is None:
+    max_weight_animal = animal
+  else:
+    max_weight_animal = animal if animal.weight > max_weight_animal.weight else max_weight_animal
 
-print(f'Общий вес животныж: {total}')
-print(f'{temp} самое тяжелое животное, с весом {count}')
+  # а тут можно доить или что-то еще делать
+  animal.feed()
+
+  if isinstance(animal, AnimalWithEggs):
+    animal.eggs()
+  if isinstance(animal, AnimalWithMilk):
+    animal.milk()
+
+print()
+print(f"Общий вес животных - {total_weight}")
+print(f"Самое жирное животное - {max_weight_animal}")
